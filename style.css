@@ -1,0 +1,117 @@
+/* Fondo general de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffe6f2; /* Fondo rosa claro */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contenedor de la galería */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajuste automático */
+    gap: 20px;
+    max-width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Estilo de cada tarjeta */
+.foto {
+    width: 250px; /* Tamaño fijo para cada cuadrado */
+    height: 350px; /* Tamaño uniforme */
+    background-color: #ffe6f2; /* Fondo rosa */
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye contenido de forma uniforme */
+    align-items: center;
+    border: 3px solid white; /* Línea blanca alrededor del cuadrado */
+}
+
+/* Imágenes dentro de los cuadros */
+.foto img {
+    display: none;
+    width: 90%; /* Para que no toque los bordes */
+    height: 180px; /* Tamaño uniforme */
+    object-fit: cover; /* Ajusta la imagen sin deformarse */
+    border-radius: 10px;
+    border: 2px solid white; /* Borde blanco alrededor de la imagen */
+}
+
+/* Texto dentro de la tarjeta */
+.foto p {
+    display: none;
+    font-size: 14px;
+    color: #333;
+    max-width: 90%;
+}
+
+/* Botón "Ver" */
+.mostrar {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.5s;
+    width: 80%;
+}
+
+.mostrar:hover {
+    background-color: #d63384;
+}
+
+
+.mostrar:hover {
+    background-color: #d63384;
+}
+
+/* Personalizar la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #181212;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e20674;
+    border-radius: 17px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #cf81a8;
+}
+
+@keyframes caer {
+    0% {
+        transform: translateY(-100vh) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+    }
+}
+
+.corazon {
+    position: fixed;
+    top: -10px;
+    color: red;
+    font-size: 24px;
+    opacity: 0.8;
+    animation: caer linear infinite;
+}
